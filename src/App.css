@@ -1,38 +1,121 @@
-.App {
-  text-align: center;
+/* Ensure the body and html take the full height */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(
+    to bottom,
+    #f0f8ff,
+    #d3e0ea
+  ); /* Gradient from light blue to soft gray */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Container for the entire game */
+.game {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  min-height: 100vh; /* Take full viewport height */
+  padding: 20px;
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Light shadow */
+  background: #ffffff; /* White background for the game container */
+}
+
+/* Center the game board */
+.game-board {
+  margin-right: 30px;
+}
+
+/* Status message */
+.status {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #4a90e2; /* Light blue color for status */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Board rows */
+.board-row {
+  display: flex;
+  margin: 5px;
+}
+
+/* Square button styles */
+.square {
+  width: 90px;
+  height: 90px;
+  background: #f7f7f7; /* Very light gray background */
+  border: 2px solid #c1c1c1; /* Light gray border */
+  border-radius: 12px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333; /* Dark gray text */
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s, border-color 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.square:hover {
+  background: #e0e0e0; /* Slightly darker gray */
+  border-color: #b0b0b0; /* Slightly darker gray for hover */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.square:focus {
+  border-color: #7db3e2; /* Light blue border for focus */
+  box-shadow: 0 0 0 4px rgba(125, 179, 226, 0.5); /* Light blue shadow */
+}
+
+/* Game info section */
+.game-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 30px;
+  color: #4a90e2; /* Light blue text color */
+}
+
+/* Game info list */
+.game-info ol {
+  padding: 0;
+  list-style: none;
+}
+
+.game-info li {
+  margin-bottom: 10px;
+}
+
+/* Button styles in game info */
+.game-info button {
+  background: #6dd5ed; /* Light cyan background */
+  color: #ffffff; /* White text */
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s;
+  display: inline-block;
+}
+
+.game-info button:hover {
+  background: #4a90e2; /* Slightly darker blue for hover */
+}
+
+.game-info button:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(106, 174, 228, 0.5); /* Light blue shadow */
+}
+
+.game-info button:active {
+  transform: scale(0.98);
 }
